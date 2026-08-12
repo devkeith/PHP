@@ -1,0 +1,268 @@
+/* ==========================================================================
+   Core Document Settings
+   ========================================================================== */
+* { 
+    box-sizing: border-box; 
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    background-color: #f0f4f8; 
+}
+
+/* Centering Framework */
+.login-container {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* White Card Panel Layout */
+.login-card { 
+    background-color: #ffffff; 
+    padding: 40px; 
+    border-radius: 12px; 
+    border: 1px solid #dbeafe; 
+    box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.03), 0 2px 4px -1px rgba(37, 99, 235, 0.02); 
+    width: 100%; 
+    max-width: 420px; 
+}
+
+h2 { 
+    text-align: center; 
+    color: #1e3a8a; 
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 32px; 
+    letter-spacing: -0.5px;
+}
+
+/* ==========================================================================
+   Input Fields and Forms
+   ========================================================================== */
+.input-field { 
+    margin-bottom: 20px; 
+}
+
+.password-label-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+label { 
+    display: block; 
+    margin-bottom: 6px; 
+    font-size: 13px;
+    font-weight: 500; 
+    color: #475569; 
+}
+
+.forgot-link {
+    font-size: 13px;
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.forgot-link:hover {
+    color: #1d4ed8;
+    text-decoration: underline;
+}
+
+input { 
+    width: 100%; 
+    padding: 12px 14px; 
+    border: 1px solid #cbd5e1; 
+    border-radius: 6px; 
+    background-color: #ffffff;
+    color: #0f172a;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+input:focus {
+    border-color: #3b82f6; 
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15); 
+}
+
+/* ==========================================================================
+   Unified Password Input Toggles (Login & Reset Challenge Platforms)
+   ========================================================================== */
+.password-wrapper {
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important;
+}
+
+.password-wrapper input {
+    width: 100% !important;
+    padding-right: 44px !important; /* Forces spacing for the eye button frame */
+    box-sizing: border-box !important;
+}
+
+/* Combined class list targets both old login selectors and newer utility nodes */
+.toggle-password,
+.toggle-password-btn {
+    position: absolute !important;
+    right: 12px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    cursor: pointer !important;
+    padding: 4px !important;
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: #94a3b8 !important; /* Matches your core color tokens */
+    border-radius: 4px;
+    transition: color 0.15s ease;
+    z-index: 5 !important;
+}
+
+.toggle-password:hover,
+.toggle-password-btn:hover {
+    color: #475569 !important;
+}
+
+/* Universal active accent overrides */
+.toggle-password.active,
+.toggle-password-btn.active {
+    color: #2563eb !important; /* Clean blueprint theme focus tint */
+}
+
+.eye-icon,
+.password-wrapper svg {
+    width: 20px !important;
+    height: 20px !important;
+    display: block !important;
+}
+
+/* ==========================================================================
+   Form Actions & Feedback Elements
+   ========================================================================== */
+.submit-btn { 
+    width: 100%; 
+    padding: 12px; 
+    background: #2563eb; 
+    color: #ffffff; 
+    border: none; 
+    border-radius: 6px; 
+    font-size: 15px;
+    font-weight: 600; 
+    cursor: pointer; 
+    margin-top: 10px;
+    transition: background-color 0.15s ease;
+}
+
+.submit-btn:hover { 
+    background: #1d4ed8; 
+}
+
+.error-banner { 
+    color: #991b1b; 
+    background: #fef2f2; 
+    border: 1px solid #fca5a5;
+    padding: 12px; 
+    border-radius: 6px; 
+    margin-bottom: 24px; 
+    text-align: center; 
+    font-size: 14px; 
+}
+
+.footer-links {
+    text-align: center;
+    margin-top: 24px;
+}
+
+.footer-links a {
+    color: #2563eb; 
+    text-decoration: none; 
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.footer-links a:hover {
+    color: #1d4ed8;
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   Reset Challenge Code Display Themes
+   ========================================================================== */
+.form-subtitle {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.code-box {
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 15px;
+    border-radius: 6px;
+    margin: 10px 0 15px 0;
+    overflow-x: auto;
+    font-size: 14px;
+    line-height: 1.5;
+    border-left: 4px solid #007acc;
+}
+
+.code-keyword { color: #569cd6; }
+.code-string { color: #ce9178; }
+.code-comment { color: #6a9955; font-style: italic; }
+.code-function { color: #dcdcaa; }
+
+.challenge-hint {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.validation-error {
+    color: #d93025;
+    display: none;
+    margin-top: 5px;
+    font-size: 13px;
+}
+
+.validation-error.visible {
+    display: block !important;
+}
+
+.hidden-reset-fields {
+    display: none;
+    border-top: 1px dashed #ccc;
+    padding-top: 15px;
+    margin-top: 15px;
+}
+
+.hidden-reset-fields.visible {
+    display: block !important;
+}
+
+.valid-input {
+    border-color: #137333 !important;
+    background-color: #f0fdf4 !important;
+}
+
+.invalid-input {
+    border-color: #d93025 !important;
+    background-color: #fef2f2 !important;
+}
